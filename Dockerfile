@@ -14,11 +14,8 @@ RUN go mod download
 # Copy source code
 COPY . .
 
-# Build the application
-RUN go build -o main .
-
 # Expose port 8008
 EXPOSE 8008
 
-# Run the application
-CMD ["./main"]
+# Run the application using go run
+CMD ["go", "run", "main.go"]
